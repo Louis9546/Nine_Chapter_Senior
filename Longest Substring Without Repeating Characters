@@ -1,0 +1,67 @@
+Question: 
+
+Given a string, find the length of the longest substring without repeating characters.
+
+Examples:
+
+Given "abcabcbb", the answer is "abc", which the length is 3.
+
+Given "bbbbb", the answer is "b", with the length of 1.
+
+Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+
+
+
+// Answer I: Brute Force O(n^2)
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if(s == null || s.length() == 0){
+            return 0;
+        }
+        int res = 0, len = s.length();
+        for(int i = 0; i < len; i++){
+            Set<Character> set = new HashSet<Character>();
+            set.add(s.charAt(i));
+            for(int j = i + 1; j < len; j++){
+                if(set.contains(s.charAt(j))){
+                    res = Math.max(res, j - i);
+                    break; 
+                }
+                else{
+                    set.add(s.charAt(j));
+                }
+            }   
+            res = Math.max(res, set.size());
+        }
+        return res;
+    }
+}
+
+
+// Answer II: Sliding Window O(n)
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if(s == null || s.length() == 0){
+            return 0;
+        }
+
+        int res = 0, i = 0, j = 0;      
+        // Use sliding window
+        Set<Character> set = new HashSet<Character>();
+        while (i <= j && j != s.length()){
+            if(!set.contains(s.charAt(j))){
+                set.add(s.charAt(j));
+                res = Math.max(res, set.size());
+                j++;
+            }
+            else{
+                set.remove(s.charAt(i));
+                i++;
+            }
+        }
+        return res;
+    }
+}
+
+
