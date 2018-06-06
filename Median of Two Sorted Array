@@ -1,0 +1,40 @@
+Median of Two Sorted Arrays / find the kth value in two sorted arrays (Hard)
+
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m = nums1.length;
+        int n = nums2.length;
+        int total = m + n;
+        // Odd: mid; Even: (mid + mid + 1) / 2
+        if(total % 2 == 0){
+            return (findKth(nums1, 0, nums2, 0,  total / 2) + findKth(nums1, 0, nums2, 0,  total / 2 + 1)) / 2;
+        }
+        else{
+            return findKth(nums1, 0, nums2, 0, total / 2 + 1);
+        }
+        
+    }
+    
+    public double findKth(int a[], int pa, int b[], int pb, int k)  {  
+        //always assume that m is equal or smaller than n  
+        if (pa >= a.length){
+            return b[pb + k - 1]; 
+        }   
+        
+        if (pb >= b.length){
+            return a[pa + k -1];
+        }
+        
+        if (k == 1)  
+            return Math.min(a[pa], b[pb]);  
+        
+        //divide k into two parts  
+        int key1 = pa + k/2 - 1 >= a.length ? Integer.MAX_VALUE : a[pa + k/2 - 1];
+        int key2 = pb + k/2 - 1 >= b.length ? Integer.MAX_VALUE : b[pb + k/2 - 1];
+        if (key1 < key2)  
+            return findKth(a, pa + k/2, b, pb, k-k/2);  
+        else{ 
+            return findKth(a, pa, b, pb + k/2, k-k/2);   
+        }
+    }  
+}
