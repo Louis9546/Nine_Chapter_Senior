@@ -1,0 +1,31 @@
+Answer: 1. Sort the array 2. Change the problem into finding the times that the sum of two number is bigger than target.
+Time: O(nlogn)
+public class Solution {
+    /**
+     * @param S: A list of integers
+     * @return: An integer
+     */
+    public int triangleCount(int[] S) {
+        // write your code here
+        if (S == null || S.length == 0) {
+            return 0;
+        }
+        Arrays.sort(S); //O(nlogn)
+        int ans = 0, target = 0;
+        
+        // O(n^2)
+        for (int i = 2; i < S.length; i++) { // Outer loop: O(n)
+            target = S[i];
+            int left = 0, right = i - 1;
+            while (left < right) { //Two Pointer O(n)
+                if (S[left] + S[right] > target) {
+                    ans += right - left;
+                    right--;
+                }
+                else{
+                    left++;
+                }
+            }
+        }
+        return ans;
+    }
