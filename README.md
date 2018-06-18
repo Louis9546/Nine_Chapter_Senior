@@ -2,61 +2,61 @@ Session 1   Follow-Up Questions I
 ----------------------------------------------------------------------------------------------------------------------------
 
 * Two Sum
-*Two sum II
-Triangle Count
-Kth Smallest Number In Sorted Matrix
-Kth Largest in N Arrays
-Kth Smallest Sum In Two Sorted Arrays
+* Two sum II
+* Triangle Count
+* Kth Smallest Number In Sorted Matrix
+* Kth Largest in N Arrays
+* Kth Smallest Sum In Two Sorted Arrays
 
 Session 2   Data Structure I
 ----------------------------------------------------------------------------------------------------------------------------
 
-Union Find 并查集
-Find the Connected Component in the Undirected Graph
-Find the Weak Connected Component in the Directed Graph
-Google Interviewer: Number of Islands
-Google Interviewer: Number of Islands II
-Facebook Interviewer: Graph Valid Tree
-Surrounded Regions
+* Union Find 并查集
+* Find the Connected Component in the Undirected Graph
+* Find the Weak Connected Component in the Directed Graph
+* Google Interviewer: Number of Islands
+* Google Interviewer: Number of Islands II
+* Facebook Interviewer: Graph Valid Tree
+* Surrounded Regions
 
-Trie 字典树
-Snapchat Interviewer: Implement Trie
+* Trie 字典树
+  * Snapchat Interviewer: Implement Trie
 
-Hash vs Trie
-Microsoft Interviwer: Word Search II
-Snapchat Interviewer: Add and Search Word
+* Hash vs Trie
+  * Microsoft Interviwer: Word Search II
+  * Snapchat Interviewer: Add and Search Word
 
-Typeahead 搜索引擎
-设计算法获得IP到城市的Map：http://www.jiuzhang.com/qa/262/
+* Typeahead 搜索引擎
+* 设计算法获得IP到城市的Map：http://www.jiuzhang.com/qa/262/
 
-Sweep-Line 扫描线
-Amazon Interviewer: Number of Airplane in the sky
+* Sweep-Line 扫描线
+  * Amazon Interviewer: Number of Airplane in the sky
 
-Summary:
-• Union Find: 	集合合并，查找元素在集合里面
-• Trie: 			快速找到一个元素，一个字母一个字母查找
-• Sweep-line: 	区间拆分
+* Summary:
+  * Union Find: 	集合合并，查找元素在集合里面
+  * Trie: 			快速找到一个元素，一个字母一个字母查找
+  * Sweep-line: 	区间拆分
 
 Session 3   Data Structure II
 ----------------------------------------------------------------------------------------------------------------------------
 
-Heap 堆: PriorityQueue
-Trapping Rain Water
-Trapping Rain Water II
+* Heap 堆: PriorityQueue
+  * Trapping Rain Water
+  * Trapping Rain Water II
 
-小技巧: 矩阵从外向内遍历技巧
-Building Outline
+* 小技巧: 矩阵从外向内遍历技巧
+* Building Outline
 
-Question? 重复元素怎么办？
-Data Stream Median
-Sliding Window Median
+* Question? 重复元素怎么办？
+* Data Stream Median
+* Sliding Window Median
 
-小技巧
-Sliding Window的题目可以拆解为下面两步：（1）加一个元素；（2）删一个元素.
+* 小技巧
+* Sliding Window的题目可以拆解为下面两步：（1）加一个元素；（2）删一个元素.
 
-Deque 双端队列
-Sliding Window Maximum
-Sliding Window Matrix Maximum
+* Deque 双端队列
+* Sliding Window Maximum
+* Sliding Window Matrix Maximum
 
 
 Session 4   Two Pointers
