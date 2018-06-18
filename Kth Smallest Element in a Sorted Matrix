@@ -1,0 +1,62 @@
+Key points:
+1: Usage of Priority Queue (Min Heap)
+2: Use Hash matrix to validate whether it has been added into heap or not.
+3: Time Complexity O(k)
+
+Answer:
+
+import java.util.PriorityQueue;
+
+class Number{
+    int x, y, val;
+    public Number(int x, int y, int val) {
+        this.x = x;
+        this.y = y;
+        this.val = val;
+    }
+}
+
+class NumComparator implements Comparator<Number> {
+    @Override
+    public int compare(Number a, Number b) {
+        return a.val - b.val;   //Min heap and top is minimal
+    }
+}
+
+public class Solution {
+    private boolean valid(int x, int y, int[][] matrix, boolean[][] hash) {
+            if (x < matrix.length && y < matrix[0].length && !hash[x][y]) {
+                return true;
+            }
+            return false;
+        }
+    
+    int[] dx = {0, 1};
+    int[] dy = {1, 0};
+    public int kthSmallest(int[][] matrix, int k) {
+        if (matrix == null || matrix.length == 0) {
+            return -1;
+        }
+        if (matrix.length * matrix[0].length < k) {
+            return -1;
+        }  
+        PriorityQueue<Number> pq = new PriorityQueue<Number>(k, new NumComparator());
+        boolean[][] hash = new boolean[matrix.length][matrix[0].length];
+        pq.offer(new Number(0, 0, matrix[0][0]));
+        hash[0][0] = true;
+        int time = 0;
+        while (time < k - 1) {
+            Number smallest = pq.poll();
+            for (int j = 0; j < 2; j++){
+                int nx = smallest.x + dx[j];
+                int ny = smallest.y + dy[j];
+                if (valid(nx, ny, matrix, hash)) {
+                    hash[nx][ny] = true;
+                    pq.offer(new Number(nx, ny, matrix[nx][ny]));
+                }
+            }
+            time++;
+        }
+        return pq.peek().val;
+    }
+}
