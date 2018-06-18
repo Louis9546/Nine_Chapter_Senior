@@ -19,6 +19,12 @@ class Node {
     }
 }
 
+class MyComparator implements Comparator<Node>{
+    @Override
+    public int compare(Node o1, Node o2){
+        return (o2.value - o1.value);
+    }
+}
 public class Solution {
     /**
      * @param arrays a list of array
@@ -27,20 +33,9 @@ public class Solution {
      */
     public int KthInArrays(int[][] arrays, int k) {
         // Write your code here
-        Queue<Node> queue =  new PriorityQueue<Node>(k, new Comparator<Node>() {  
-                public int compare(Node o1, Node o2) {  
-                    if (o1.value > o2.value)
-                        return -1;
-                    else if (o1.value < o2.value)
-                        return 1;
-                    else
-                        return 0;
-                }
-            }); 
-
-        int n = arrays.length;
+        Queue<Node> queue = new PriorityQueue<Node>(k, new MyComparator());
         int i;
-        for (i = 0; i < n; ++i) {
+        for (i = 0; i < arrays.length; ++i) {
             Arrays.sort(arrays[i]);
             
             if (arrays[i].length > 0) {
