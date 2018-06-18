@@ -1,5 +1,9 @@
-Answer: 1. Sort the array 2. Change the problem into finding the times that the sum of two number is bigger than target.
+Key Points:
+1. Sort the array 
+2. Change the problem into finding the times that the sum of two number is bigger than target.
 Time: O(nlogn)
+
+Answer:
 public class Solution {
     /**
      * @param S: A list of integers
