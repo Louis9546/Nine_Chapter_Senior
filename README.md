@@ -1,8 +1,8 @@
 Session 1   Follow-Up Questions I
 ----------------------------------------------------------------------------------------------------------------------------
 
-Two Sum
-Two sum II
+* Two Sum
+*Two sum II
 Triangle Count
 Kth Smallest Number In Sorted Matrix
 Kth Largest in N Arrays
