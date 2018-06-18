@@ -1,7 +1,7 @@
 Key points:
 1: Usage of Priority Queue (Min Heap)
 2: Use Hash matrix to validate whether it has been added into heap or not.
-3: Time Complexity O(k)
+3: Heap Time Complexity O(logn)
 
 Answer:
 
