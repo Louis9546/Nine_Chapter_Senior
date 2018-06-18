@@ -1,4 +1,5 @@
-# Session 1   Follow-Up Questions I
+Session 1   Follow-Up Questions I
+----------------------------------------------------------------------------------------------------------------------------
 
 Two Sum
 Two sum II
