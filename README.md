@@ -63,24 +63,24 @@ Session 4   Two Pointers
 ----------------------------------------------------------------------------------------------------------------------------
 
 1. 对撞型或者相会型: 
- 1. Two sum类
- 2. Two sum II
- 3. Triangle Count
- 4. Trapping Rain Water
- 5. Container With Most Water
- 6. Sum Closest
- 6. 4 Sum
- 7. 3 Sum
- 8. k sum
+    1. Two sum类
+    2. Two sum II
+    3. Triangle Count
+    4. Trapping Rain Water
+    5. Container With Most Water
+    6. Sum Closest
+    6. 4 Sum
+    7. 3 Sum
+    8. k sum
 
 2. Partition类
-Kth Largest Element [Quick Select / Quick Sort]
-Nuts & Bolts Problem
-Sort Colors
-Partition Array by Odd and Even
-Sort Letters by Case
-Valid Palindrome
-Wiggle sort II
+    1. Kth Largest Element [Quick Select / Quick Sort]
+    2. Nuts & Bolts Problem
+    3. Sort Colors
+    4. Partition Array by Odd and Even
+    5. Sort Letters by Case
+    6. Valid Palindrome
+    7. Wiggle sort II
 
 2. 前向型或者追击型
 窗口类
