@@ -8,9 +8,7 @@ Triangle Count
 Kth Smallest Number In Sorted Matrix
 Kth Largest in N Arrays
 Kth Smallest Sum In Two Sorted Arrays
-
-
-
+----------------------------------------------------------------------------------------------------------------------------
 
 Session 2   Data Structure I
 
@@ -39,7 +37,7 @@ Summary:
 • Union Find: 	集合合并，查找元素在集合里面
 • Trie: 			快速找到一个元素，一个字母一个字母查找
 • Sweep-line: 	区间拆分
-
+----------------------------------------------------------------------------------------------------------------------------
 
 Session 3   Data Structure II
 
