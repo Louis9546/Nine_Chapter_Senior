@@ -170,7 +170,6 @@ Session 7   Follow-Up Questions II
 Find Peak Element
 
 Find Peak Element II
-
     __第K大问题__
     1. Kth Largest Element
     2. Kth Smallest Number In Matrix
