@@ -91,14 +91,14 @@ Session 4   Two Pointers
     4. Longest Substring with At Most K (two) Distinct Characters
     5. Remove Nth Node From End of List
 
-快慢类
-Find the Middle of Linked List
-Linked List Cycle I
-Linked List Cycle II
+    __快慢类__
+    1. Find the Middle of Linked List
+    2. Linked List Cycle I
+    3. Linked List Cycle II
 
 3. 两个数组两个指针（并行型）
-两个数组各找一个元素，
-使得和等于target：（1）找一种；（2）找全部种类.
+
+两个数组各找一个元素，使得和等于target：（1）找一种；（2）找全部种类.
 
 The Smallest Difference
 Merge Two Sorted Lists
