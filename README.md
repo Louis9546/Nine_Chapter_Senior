@@ -63,7 +63,8 @@ Session 4   Two Pointers
 ----------------------------------------------------------------------------------------------------------------------------
 
 1. 对撞型或者相会型: 
-    *Two sum类*
+
+    __Two sum类__
     1. Two sum II
     2. Triangle Count
     3. Trapping Rain Water
@@ -73,7 +74,7 @@ Session 4   Two Pointers
     7. 3 Sum
     8. k sum
 
-2. Partition类
+    __Partition类__
     1. Kth Largest Element [Quick Select / Quick Sort]
     2. Nuts & Bolts Problem
     3. Sort Colors
@@ -83,12 +84,13 @@ Session 4   Two Pointers
     7. Wiggle sort II
 
 2. 前向型或者追击型
-窗口类
-Minimum Size Subarray Sum
-Longest Substring Without Repeating Characters
-Minimum Window Substring
-Longest Substring with At Most K (two) Distinct Characters
-Remove Nth Node From End of List
+
+    __窗口类__
+    1. Minimum Size Subarray Sum
+    2. Longest Substring Without Repeating Characters
+    3. Minimum Window Substring
+    4. Longest Substring with At Most K (two) Distinct Characters
+    5. Remove Nth Node From End of List
 
 快慢类
 Find the Middle of Linked List
