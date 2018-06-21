@@ -63,12 +63,12 @@ Session 4   Two Pointers
 ----------------------------------------------------------------------------------------------------------------------------
 
 1. 对撞型或者相会型: 
-    1. Two sum类
-    2. Two sum II
-    3. Triangle Count
-    4. Trapping Rain Water
-    5. Container With Most Water
-    6. Sum Closest
+_Two sum类_
+    1. Two sum II
+    2. Triangle Count
+    3. Trapping Rain Water
+    4. Container With Most Water
+    5. Sum Closest
     6. 4 Sum
     7. 3 Sum
     8. k sum
