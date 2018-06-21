@@ -45,18 +45,18 @@ Session 3   Data Structure II
   * Trapping Rain Water II
 
 * 小技巧: 矩阵从外向内遍历技巧
-* Building Outline
+    * Building Outline
 
 * Question? 重复元素怎么办？
-* Data Stream Median
-* Sliding Window Median
+    * Data Stream Median
+    * Sliding Window Median
 
 * 小技巧
-* Sliding Window的题目可以拆解为下面两步：（1）加一个元素；（2）删一个元素.
+    * Sliding Window的题目可以拆解为下面两步：（1）加一个元素；（2）删一个元素.
 
 * Deque 双端队列
-* Sliding Window Maximum
-* Sliding Window Matrix Maximum
+    * Sliding Window Maximum
+    * Sliding Window Matrix Maximum
 
 
 Session 4   Two Pointers
@@ -170,6 +170,7 @@ Session 7   Follow-Up Questions II
 Find Peak Element
 
 Find Peak Element II
+
     __第K大问题__
     1. Kth Largest Element
     2. Kth Smallest Number In Matrix
