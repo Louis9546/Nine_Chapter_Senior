@@ -170,16 +170,16 @@ Session 7   Follow-Up Questions II
 Find Peak Element
 
 Find Peak Element II
-    __第K大问题__
-    1. Kth Largest Element
-    2. Kth Smallest Number In Matrix
-    3. Kth Smallest Number In Two Arrays
-    4. Subarray Sum
-    5. Submatrix Sum
-    6. Subarray Sum II
-    __循环连续子序列__
-    1. Continuous Subarray Sum
-    2. Continuous Subarray Sum II
-    __旋转排序__
-    1. Wiggle Sort
-    2. Wiggle Sort II
+* 第K大问题
+    * Kth Largest Element
+    * Kth Smallest Number In Matrix
+    * Kth Smallest Number In Two Arrays
+    * Subarray Sum
+    * Submatrix Sum
+    * Subarray Sum II
+* 循环连续子序列
+    * Continuous Subarray Sum
+    * Continuous Subarray Sum II
+* 旋转排序
+    * Wiggle Sort
+    * Wiggle Sort II
