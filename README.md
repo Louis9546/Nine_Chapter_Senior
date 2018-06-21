@@ -101,6 +101,7 @@ Session 4   Two Pointers
 两个数组各找一个元素，使得和等于target：（1）找一种；（2）找全部种类.
 
 The Smallest Difference
+
 Merge Two Sorted Lists
 
 
@@ -108,51 +109,58 @@ Session 5   Dynamic Programming I
 ----------------------------------------------------------------------------------------------------------------------------
 
 1. 滚动数组优化
-f[i] = max(f[i-1], f[i-2] + A[i]); 转换为 f[i%2] = max(f[(i-1)%2]和 f[(i-2)%2]);
 
-House Robber
-House Robber II
-Maximal Square
+    f[i] = max(f[i-1], f[i-2] + A[i]); 转换为 f[i%2] = max(f[(i-1)%2]和 f[(i-2)%2]);
+    1. House Robber
+    2. House Robber II
+    3. Maximal Square
 
-小技巧
-网格类的题目
-正方形用右下角作为定位角
-长方形可以用左上角和右下角作为定位角
+    __小技巧__
+    1. 网格类的题目
+    2. 正方形用右下角作为定位角
+    3. 长方形可以用左上角和右下角作为定位角
 
-二维滚动数组相关题目
-Unique Paths
-Minimum Path Sum
-Edit Distance
+    __二维滚动数组相关题目__
+    1. Unique Paths
+    2. Minimum Path Sum
+    3. Edit Distance
 
 2. 记忆化搜索
-Longest Increasing Subsequence
-Longest Increasing Continuous Subsequence 2D
+    1. Longest Increasing Subsequence
+    2. Longest Increasing Continuous Subsequence 2D
 
-博弈类DP
-Coins in a line
-Coins in a line II
-Coins in a line III
+    __博弈类DP__
+    1. Coins in a line
+    2. Coins in a line II
+    3. Coins in a line III
 
 
 Session 6   Dynamic Programming II
 ----------------------------------------------------------------------------------------------------------------------------
 
 1. 区间类DP
-特点
-（1）求一段区间的解max/min/count
-（2）转移方程通过区间更新
-（3）从大到小的更新
+    __特点__
+    1. 求一段区间的解max/min/count
+    1. 转移方程通过区间更新
+    1. 从大到小的更新
 
 Stone Game
+
 Burst Ballons
+
 Scramble String
+
 coin in a line III
 
 2. 背包类DP
 BackPack
+
 BackPack IV
+
 BackPack II
+
 K Sum
+
 Minimum Adjustment Cost
 
 
@@ -160,20 +168,18 @@ Session 7   Follow-Up Questions II
 ----------------------------------------------------------------------------------------------------------------------------
 
 Find Peak Element
+
 Find Peak Element II
-
-第K大问题
-Kth Largest Element
-Kth Smallest Number In Matrix
-Kth Smallest Number In Two Arrays
-Subarray Sum
-Submatrix Sum
-Subarray Sum II
-
-循环连续子序列
-Continuous Subarray Sum
-Continuous Subarray Sum II
-
-旋转排序
-Wiggle Sort
-Wiggle Sort II
+    __第K大问题__
+    1. Kth Largest Element
+    2. Kth Smallest Number In Matrix
+    3. Kth Smallest Number In Two Arrays
+    4. Subarray Sum
+    5. Submatrix Sum
+    6. Subarray Sum II
+    __循环连续子序列__
+    1. Continuous Subarray Sum
+    2. Continuous Subarray Sum II
+    __旋转排序__
+    1. Wiggle Sort
+    2. Wiggle Sort II
