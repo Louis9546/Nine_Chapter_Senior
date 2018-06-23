@@ -1,0 +1,38 @@
+URL: https://leetcode.com/problems/the-skyline-problem/description/
+# Very famous and hard problem in leetcode.
+
+
+public List<int[]> getSkyline(int[][] buildings) {
+        List<int[]> heights = new ArrayList<>();
+        for (int[] b : buildings) {
+            // Nice trick to put negative height for the left edge
+            heights.add(new int[] {b[0], -b[2]});
+            heights.add(new int[] {b[1], b[2]});
+        }
+        Collections.sort(heights, (a, b) -> a[0] != b[0] ? 
+            a[0] - b[0] : 
+            /* Because we use negative heights here we could get the correct sorting order*/ a[1] - b[1]);
+        
+        // Max heap of heights
+        Queue<Integer> pq = new PriorityQueue<>((a, b) -> (b - a));
+        pq.offer(0);
+        // Height of the previous key point
+        int prev = 0;
+        List<int[]> result = new ArrayList<>();
+        for (int[] h : heights) {
+            if (h[1] < 0) {
+                // Add the building to priority queue
+                pq.offer(-h[1]);
+            } else {
+                // Remove the building from priority queue
+                pq.remove(h[1]);
+            }
+            int cur = pq.peek();
+            // Height changes, so add a new key point to the result
+            if (prev != cur) {
+                result.add(new int[] {h[0], cur});
+                prev = cur;
+            }
+        }
+        return result;
+    }
