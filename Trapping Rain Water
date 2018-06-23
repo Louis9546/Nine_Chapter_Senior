@@ -1,0 +1,35 @@
+Use two pointers to solve it. Also there is another method such as Brute force O(n^2) and dynamic programming O(n)
+Time Conplexity: O(N)
+
+class Solution {
+    public int trap(int[] height) {
+        if (height == null || height.length == 0) {
+            return -1;
+        }
+        int left = 0, right = height.length - 1, res = 0;
+        int leftMax = 0, rightMax = 0;
+        while (left < right) {
+            // Travese from left 
+            if (height[left] < height[right]) {
+                if (height[left] > leftMax) {
+                    leftMax = height[left];
+                }
+                else {
+                    res += leftMax - height[left];
+                }
+                left++;
+            }
+            else{
+                if (height[right] > rightMax) {
+                    rightMax = height[right];
+                }
+                else{
+                    res += rightMax - height[right];
+                }
+                right--;
+            }
+        }
+        return res;
+        
+    }
+}
