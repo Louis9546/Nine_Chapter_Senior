@@ -17,7 +17,9 @@ findMedian() -> 1.5
 addNum(3) 
 findMedian() -> 2
 
+
 Answer:
+Time Complexity: n*O(logn)
 class MedianFinder {
     private PriorityQueue<Integer> minH;
     private PriorityQueue<Integer> maxH;
