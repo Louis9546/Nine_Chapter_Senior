@@ -17,4 +17,53 @@ A solution set is:
 
 
 Answer: Use Two Pointers to solve it.
+Use 3Sum and time complexity is O(n^3)
 
+class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        List<List<Integer>> finalAns = new ArrayList<List<Integer>>();
+        if(nums == null || nums.length < 4) return finalAns;
+        Arrays.sort(nums);
+        for(int i = 0; i < nums.length - 3; i++){
+            if(i >= 1 && nums[i] == nums[i-1]) continue;
+            int first = nums[i];
+            int smallTarget = target - first;
+            for(List<Integer> temp : threeSum(nums, i + 1, smallTarget)){
+                if(temp.size() == 3) {
+                    finalAns.add(Arrays.asList(first, temp.get(0), temp.get(1), temp.get(2)));
+                }
+            }
+        }
+        return finalAns;
+    }
+
+    public List<List<Integer>> threeSum(int[] nums, int start, int target) {
+        List<List<Integer>> res = new ArrayList<>();
+        if(nums == null || nums.length < 3){
+            return res;
+        }
+        for(int i = start; i < nums.length - 2; i++) {
+            if(i >= start + 1 && nums[i] == nums[i-1]) continue;
+            int l = i + 1;
+            int r = nums.length - 1;
+            while(l < r) {
+                if (nums[i] + nums[l] + nums[r] == target) {
+                    res.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                    while(l < r && nums[l] == nums[l + 1]) {
+                        l++;
+                    }
+                    while(l < r && nums[r] == nums[r - 1]) {
+                        r--;
+                    }
+                    l++;
+                    r--;
+                }
+                else if (nums[i] + nums[l] + nums[r] < target) {
+                    l++;
+                }
+                else r--;
+            }
+        }
+        return res;
+    }
+}
