@@ -10,3 +10,33 @@ Do it in one-pass and in-place.
 
 
 Answer: 
+public class Solution {
+    /*
+     * @param chars: The letter array you should sort by Case
+     * @return: nothing
+     */
+    public void sortLetters(char[] chars) {
+        // write your code here
+        if (chars == null || chars.length == 0) {
+            return;
+        } 
+        int l = 0;
+        int r = chars.length - 1;
+        while(l < r){
+            while(l < chars.length && (int)(chars[l]) > 96){
+                l++;
+            }
+            while(r > 0 && (int)(chars[r]) < 96){
+                r--;
+            }
+            if(l < r){
+                char temp = chars[l];
+                chars[l] = chars[r];
+                chars[r] = temp;
+                l++;
+                r--;
+            }
+        }
+        return;
+    }
+}
