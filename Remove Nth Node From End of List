@@ -1,0 +1,58 @@
+Given a linked list, remove the n-th node from the end of list and return its head.
+
+Example:
+
+Given linked list: 1->2->3->4->5, and n = 2.
+
+After removing the second node from the end, the linked list becomes 1->2->3->5.
+Note:
+
+Given n will always be valid.
+
+Follow up:
+
+Could you do this in one pass?
+
+Answer:O(n)
+Use While loop to find the length of list and then use for loop to find the node that you wanna delete.
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        if(head == null) {
+            return null;
+        }
+        // Find the length of List
+        int len = 0;
+        ListNode temp = head;
+        while(temp != null) {
+            len++;
+            temp = temp.next;
+        }
+        
+        // Check the valida of n
+        if(len < n){
+            return head;
+        }
+        
+        if(len == n){
+            return head.next;
+        }
+        else{
+            temp = head;
+            for(int i = 1; i < len - n; i++){
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            return head;
+        }
+        
+    }
+}
