@@ -1,0 +1,63 @@
+Description
+Given two array of integers(the first array is array A, the second array is array B), now we are going to find a element in array A which is A[i], and another element in array B which is B[j], so that the difference between A[i] and B[j] (|A[i] - B[j]|) is as small as possible, return their smallest difference.
+Have you met this question in a real interview?  Yes
+Example
+For example, given array A = [3,6,7,4], B = [2,8,9,3], return 0
+Challenge
+O(n log n) time
+
+Answer:
+Solution 1: Brute Force Solution
+O(2nlogn) + O(n^2) = O(n^2);
+
+public class Solution {
+    /**
+     * @param A: An integer array
+     * @param B: An integer array
+     * @return: Their smallest difference.
+     */
+    public int smallestDifference(int[] A, int[] B) {
+        // write your code here
+        Arrays.sort(A);
+        Arrays.sort(B);
+        int diff = Integer.MAX_VALUE;
+        for(int i = 0; i < A.length; i++){
+            for(int j = 0; j < B.length; j++) {
+                diff = Math.min(diff, Math.abs(A[i] - B[j]));
+            }
+        }
+        return diff;
+    }
+}
+
+Solution 2: Use two pointers at each array
+O(2nlogn) + O(2n) = O(n log n);
+public class Solution {
+    /**
+     * @param A: An integer array
+     * @param B: An integer array
+     * @return: Their smallest difference.
+     */
+    public int smallestDifference(int[] A, int[] B) {
+        if(A == null || B == null || A.length == 0 || B.length == 0) return 0;
+        // write your code here
+        Arrays.sort(A);
+        Arrays.sort(B);
+        int diff = Integer.MAX_VALUE;
+        int a = 0, b = 0;
+        while(a < A.length && b < B.length){
+            if(A[a] == B[b]){
+                return 0;
+            }
+            if(A[a] < B[b]){
+                diff = Math.min(diff, Math.abs(A[a] - B[b]));
+                a++;
+            }
+            else{
+                diff = Math.min(diff, Math.abs(A[a] - B[b]));
+                b++;
+            }
+        }
+        return diff;
+    }
+}
