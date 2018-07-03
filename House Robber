@@ -35,3 +35,4 @@ class Solution {
         return money[nums.length];
     }
 }
+
