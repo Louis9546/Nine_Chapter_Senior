@@ -1,0 +1,32 @@
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+How many possible unique paths are there?
+URL: https://leetcode.com/problems/unique-paths/description/
+
+Answer: Using Dynamic Programming
+class Solution {
+    public int uniquePaths(int m, int n) {
+        if(m == 0 || n == 0) return 0;
+        // State[x][y]: the total paths to the point (x, y)
+        int[][] path = new int[m][n];
+        
+        // Initialize
+        for (int i = 0; i < m; i++){
+            path[i][0] = 1;
+        }
+        
+        for(int i = 0; i < n; i++){
+            path[0][i] = 1;
+        }
+        
+        // Function
+        for(int i = 1; i < m; i++){
+            for(int j = 1; j < n; j++){
+                path[i][j] = path[i - 1][j] + path[i][j - 1];
+            }
+        }
+        
+        // Result
+        return path[m - 1][n - 1];
+    }
+}
