@@ -50,11 +50,7 @@ class Solution {
                     area[i][j] = 0;
                 }
                 else{
-                    area[i][j] = Math.min(area[i - 1][j], area[i][j - 1]);
-                    area[i][j] = Math.min(area[i][j], area[i - 1][j - 1]);
-                    if(matrix[i][j] == '1') {
-                        area[i][j] += 1;
-                    }
+                    area[i][j] = Math.min(area[i - 1][j - 1], Math.min(area[i - 1][j], area[i][j - 1])) + 1;
                     maxLenOfArea = Math.max(area[i][j], maxLenOfArea);
                 }
                 
