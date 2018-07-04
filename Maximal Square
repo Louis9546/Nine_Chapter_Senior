@@ -1,0 +1,65 @@
+Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
+
+Example:
+
+Input: 
+
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+
+Output: 4
+
+
+DP: for each node, we need to find the minimal length of the maximal square of three nodes: left one, up one and left-up one. 
+Then save the value into area array. 
+
+
+class Solution {
+    public int maximalSquare(char[][] matrix) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length  == 0) {
+            return 0;
+        }
+        int m = matrix.length;
+        int n = matrix[0].length;
+        
+        // State: area[x][y]: the maximal length of square for the point (x, y)
+        int[][] area = new int[m][n];
+        int maxLenOfArea = 0;
+        
+        // Initialization
+        for(int i = 0; i < m; i++){
+            if(matrix[i][0] == '1'){
+                area[i][0] = 1;
+                maxLenOfArea = 1;
+            }
+        }
+        
+        for(int i = 0; i < n; i++){
+            if(matrix[0][i] == '1'){
+                area[0][i] = 1;
+                maxLenOfArea = 1;
+            }
+        }
+        
+        // Function
+        for(int i = 1; i < m; i++){
+            for(int j = 1; j < n; j++){
+                if(matrix[i][j] == '0'){
+                    area[i][j] = 0;
+                }
+                else{
+                    area[i][j] = Math.min(area[i - 1][j], area[i][j - 1]);
+                    area[i][j] = Math.min(area[i][j], area[i - 1][j - 1]);
+                    if(matrix[i][j] == '1') {
+                        area[i][j] += 1;
+                    }
+                    maxLenOfArea = Math.max(area[i][j], maxLenOfArea);
+                }
+                
+            }
+        }
+        return maxLenOfArea * maxLenOfArea;
+    }
+}
