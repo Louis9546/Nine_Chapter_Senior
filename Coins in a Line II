@@ -29,4 +29,3 @@ public class Solution {
         return dp[n]  > sum[n] / 2;
     }
 }
-
