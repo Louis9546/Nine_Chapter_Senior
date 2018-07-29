@@ -1,0 +1,72 @@
+Problem 1:
+Backpack problem 2.
+
+
+Problem 2:
+
+Given a string S and a string T, return 1 if it's possible to convert string S into string T by deleting some(possible zero)
+characters from string S, and otherwise returns 0.
+
+
+For example, given S="abcd" and T="abd" the function should return 1. We can delete 'c' from string S to convert string S into-google 1point3acres
+string T. However, given S="ab" and T="ba" the function should return 0.
+
+
+Assume that:
+the length of ('S' , 'T') is within the range [1..1,000]
+strings S and T consist only of lower-case letters (a-z)
+
+
+
+public int solution(String s1, String s2)
+{
+    // edge case
+    if(s1 == null || s2 == null){
+        return 0;
+    }
+    
+    // calculates length
+    int m = s1.length();
+    int n = s2.length();
+
+
+    // State Function: dp[i][j]: if it is possible to convert i characters of s1 to j characters of s2: true; otherwise false
+    boolean dp[][]=new boolean[m + 1][n + 1];
+
+
+    // initialize the state function
+    for (int i = 0; i <= m; i++)
+    {
+        for (int j = 0; j <= n; j++)
+        {
+            dp[i][j] = false;
+        }
+    }
+    dp[0][0] = true;
+
+
+    // State Transition Equation
+    for (int i = 0; i <= m; i++)
+    {
+        for (int j = 0; j <= n; j++)
+        {
+            if(i == 0 && j > 0){
+                dp[i][j] = false;
+            }
+            else if(j == 0 && i > 0){
+                dp[i][j] = true;
+            }
+            else if (i > 0 && j > 0){
+                // delete or not delete the ith element in s1.
+                dp[i][j] = dp[i - 1][j] || (dp[i - 1][j - 1] && s1.charAt(i - 1) == s2.charAt(j - 1));
+            }
+        }
+    }
+    // Answer
+    if(dp[m][n] == true){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
