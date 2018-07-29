@@ -1,0 +1,36 @@
+
+
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        if(nums == null || nums.length == 0){
+            return 0;
+        }  
+        
+        // State: res[i]: the longest sequence this index
+        int[] res = new int[nums.length];
+        
+        // Initialization the res[];
+        for(int i = 0; i < nums.length; i++){
+            res[i] = 1;
+        }
+        
+        // Transformation Function
+        for(int i = 1; i < nums.length; i++){
+            for(int j = 0; j < i; j++){
+                if(nums[i] > nums[j] && res[i] < res[j] + 1){
+                    res[i] = res[j] + 1;
+                }
+            }
+            
+        }
+        
+        // Result
+        int max = 0;
+        for(int i = 0; i < res.length; i++){
+            if(max <= res[i]) {
+                max = res[i];
+            }
+        }
+        return max;
+    }
+}
