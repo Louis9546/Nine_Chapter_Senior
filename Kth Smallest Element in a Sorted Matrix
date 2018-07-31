@@ -3,7 +3,7 @@ Key points:
 2: Use Hash matrix to validate whether it has been added into heap or not.
 3: Heap Time Complexity O(logn)
 4: Question "Kth Smallest Sum In Two Sorted Arrays" can be transferred into this one. Just change the two array into a sorted matrix.
-
+不能使用k/n与k%n直接获得第k小的值在数组中的位置，因为第二行开头不一定比第一行末尾大。例子【【1，2】，【1，3】】。
 Answer:
 
 import java.util.PriorityQueue;
