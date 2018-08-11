@@ -1,50 +1,83 @@
-Description
-Given a string s, find the length of the longest substring T that contains at most k distinct characters.
-Have you met this question in a real interview?  Yes
-Example
-For example, Given s = "eceba", k = 3,
+386 LintCode: Longest Substring with At Most K Distinct Characters 
+Similar to longest substring without duplication (Use set).
 
-T is "eceb" which its length is 4.
-Challenge
-O(n), n is the size of the string s.
 
-Answer:
-Time is O(n).
+Method One: Brute Force (Time out)
+
+import java.util.*;
+
 public class Solution {
-    /*<e 2> <c 1> <b 3> <a 4>
+    /**
      * @param s: A string
      * @param k: An integer
      * @return: An integer
      */
     public int lengthOfLongestSubstringKDistinct(String s, int k) {
         // write your code here
-        if (s == null || s.length() == 0 || k == 0) {
+        if(s == null || s.length() == 0){
             return 0;
         }
-        if(s.length() < k) {
-            return s.length();
-        }
-        
-        int l = 0, len = 0;
-        HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
-        for (int r = 0; r < s.length(); r++) {
-            char c = s.charAt(r);
-            hm.put(c, hm.getOrDefault(c, 0) + 1);
-            if(hm.size() > k){
-                len = Math.max(len, r - l);
-                while(hm.size() > k){
-                    char fc = s.charAt(l);
-                    if(hm.get(fc) > 1) {
-                        hm.put(fc, hm.get(fc) - 1);
-                    }
-                    else{
-                        hm.remove(fc);
-                    }
-                    l++;
+        int res = 0;
+        for(int i = 0; i < s.length(); i++){
+            for(int j = i; j < s.length(); j++){
+                String temp = s.substring(i, j + 1);
+                if(checkString(temp, k)){
+                    res = Math.max(res, j - i + 1);
                 }
             }
-        } 
-        len = Math.max(len, s.length()-l);
-        return len;
+        }
+        return res;
+    }
+    
+    public boolean checkString(String s, int k){
+        HashMap<Character, Integer> hm = new HashMap<Character,Integer>();
+        for(int i = 0; i < s.length(); i++){
+            hm.put(s.charAt(i), hm.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        if(hm.size() <= k){
+            return true;
+        }
+        return false;
+    }
+}
+
+
+Method Two: Use HashMap and two pointers
+import java.util.*;
+
+public class Solution {
+    /**
+     * @param s: A string
+     * @param k: An integer
+     * @return: An integer
+     */
+    public int lengthOfLongestSubstringKDistinct(String s, int k) {
+        // write your code here
+        if(s == null || s.length() == 0){
+            return 0;
+        }
+        int res = 0;
+        HashMap<Character, Integer> hm = new HashMap<Character,Integer>();
+        int i = 0, j = 0;
+        while(i <= j && j != s.length()){
+            if(hm.size() <= k){
+                hm.put(s.charAt(j), hm.getOrDefault(s.charAt(j), 0) + 1);
+                if(hm.size() <= k){           // Important: If the size of hashmap is bigger than k after we put element into it, we shouldn't update the size of hashmap
+                    res = Math.max(res, j - i + 1);
+                }
+                j++;
+            }
+            else{
+                int value = hm.get(s.charAt(i));
+                if(value > 1){
+                    hm.put(s.charAt(i), value - 1);
+                }
+                else{
+                    hm.remove(s.charAt(i));
+                }
+                i++;
+            }
+        }
+        return res;
     }
 }
