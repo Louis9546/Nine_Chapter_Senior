@@ -1,0 +1,45 @@
+146. LRU Cache
+
+class LRUCache {
+    int capacity;
+    HashMap <Integer, Integer>cacheData;
+    ArrayDeque<Integer> stack;
+
+    public LRUCache(int capacity) {
+        this.capacity = capacity;
+        cacheData = new HashMap<Integer,Integer>();
+        stack = new ArrayDeque<Integer>();
+    }
+    
+
+    
+    public int get(int key) {
+        if(cacheData.containsKey(key)){
+            stack.remove(key);
+            stack.add(key);
+            return cacheData.get(key);
+        }
+        return -1;
+    }
+    
+    
+    public void put(int key, int value){
+        if(cacheData.containsKey(key)){
+            stack.remove(key);
+        }
+        if(stack.size() == capacity){
+            cacheData.remove(stack.pollFirst());
+        }
+        cacheData.put(key, value);
+        stack.add(key);
+        
+    }
+}
+
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
