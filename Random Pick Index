@@ -1,0 +1,39 @@
+398. Random Pick Index
+
+Given an array of integers with possible duplicates, randomly output the index of a given target number. You can assume that the given target number must exist in the array.
+
+Note:
+The array size can be very large. Solution that uses too much extra space will not pass the judge.
+
+
+import java.util.*;
+
+class Solution {
+    Random rand;
+    int[] nums;
+    public Solution(int[] nums) {
+        this.rand = new Random();
+        this.nums = nums;
+    }
+    
+    public int pick(int target) {
+        int res = -1;
+        int total = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] != target){
+                continue;
+            }
+            if(rand.nextInt(++total) == 0){
+                res = i;
+            }
+        }
+        return res;
+    }
+}
+
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution obj = new Solution(nums);
+ * int param_1 = obj.pick(target);
+ */
